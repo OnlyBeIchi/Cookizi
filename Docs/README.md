@@ -1,0 +1,12 @@
+# Cookizi
+Toàn bộ các chức năng cơ bản của Cookizi (app giúp người dùng học nấu ăn và tạo thói quen sinh hoạt):
+
+1.Khả năng đưa ra các công thức nấu ăn bằng cách người dùng có thể nhập những thứ họ đang có (hoặc chụp ảnh để máy phân tích và tự động nhập - TBD): Chương trình sẽ lấy những nguyên liệu đang có và tìm các công thức phù hợp bằng việc so sánh các nguyên liệu của các món ăn có trong hệ thống và trả về gợi ý các món ăn tùy theo số lượng nguyên liệu giống nhau.
+
+2.Khả năng cấu tạo các kế hoạch ăn uống: Người dùng có thể nhập vào các số liệu về cơ thể bản thân (như tuổi, cân, chiều cao, các bệnh tật, dị ứng,...): Chương trình sẽ tạo ra lịch trình bằng việc từ những nguyên liệu hiện có tính ra toàn bộ các món ăn có thể làm được bằng số nguyên liệu đó và thêm cả các nguyên liệu hết hạn nhanh cho vào trước quyền ưu tiên của lịch trình, sau đó các món ăn sẽ được sắp xếp vào trong từng bữa với các yêu cầu tối thiểu về potenin, carb, fat,... tùy theo người dùng.
+
+3.Khả năng chỉ người dùng cách nấu ăn khi chọn nấu các món trên app: Sau khi người dùng chọn món ăn trên app, mỗi món ăn sẽ được liên kết với các video và hướng dẫn chi tiết về cách chế biến món ăn, các món ăn có thể sẽ có thêm những FAQ ở bên dưới cho người dùng có thể thấy những câu hỏi hay được hỏi về món ăn(như có thể thay thế nguyên liệu a = b, món ăn có mất vị nhanh khi ở trong tủ lạnh không,...).
+
+4.Khả năng tạo tài khoản để lưu trữ thông tin người dùng: Mỗi người dùng có thể tạo một tài khoản để lưu trữ thông tin, chương trình có thể biết thêm về các sở thích về món ăn theo số lượng bấm người của người dùng lên các món ăn, điều này cũng có thể giúp khả năng soạn lịch trình tốt hơn.
+
+5.Khả năng đánh giá các món ăn + nhà phê bình: Khi người dùng đã ăn xong món ăn, họ có thể đánh giá nó theo các thang điểm (mùi, vị, kết cấu,...) và comment(Không yêu cầu) khi người dùng khác xem món ăn họ có thể thấy các đánh giá và lựa chọn để xem comment của người dùng khác, các comment được đánh giá cao từ người dùng khác sẽ được đẩy lên trên đầu. Những người nhà phê bình có danh tiếng tốt giữa các người dùng tốt cũng sẽ được đẩy comment lên cao hơn.
