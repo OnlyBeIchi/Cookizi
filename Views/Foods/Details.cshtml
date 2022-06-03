@@ -1,0 +1,35 @@
+﻿@model Cookizi.Models.QLFood
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>QLFood</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenFood)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenFood)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NguyenLieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguyenLieu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
