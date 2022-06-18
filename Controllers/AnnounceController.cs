@@ -7,16 +7,15 @@ using Cookizi.Models;
 
 namespace Cookizi.Controllers
 {
-    public class FoodsController : Controller
+    public class AnnounceController : Controller
     {
-        // GET: Foods
+        // GET: Announce
         public ActionResult Index()
         {
             FoodList strFood = new FoodList();
             List<QLFood> obj = strFood.GetFood(string.Empty);
             return View(obj);
         }
-
         public ActionResult Create()
         {
             return View();
@@ -34,9 +33,6 @@ namespace Cookizi.Controllers
             }
             return View();
         }
-
-        // Sửa Food
-
         public ActionResult Edit(string id = "")
         {
             FoodList Luat = new FoodList();
@@ -53,31 +49,12 @@ namespace Cookizi.Controllers
             return RedirectToAction("Index");
         }
 
-        // Xóa Food
-
-        public ActionResult Delete(string id = "")
-        {
-            FoodList Luat = new FoodList();
-            List<QLFood> obj = Luat.GetFood(id);
-            return View(obj.FirstOrDefault());
-        }
-
-        [HttpPost]
-
-        public ActionResult Delete(QLFood strFood)
-        {
-            FoodList Food = new FoodList();
-            Food.DeleteFood(strFood);
-            return RedirectToAction("Index");
-        }
-
-        // Hiển thị Food
-
         public ActionResult Details(string id = "")
         {
             FoodList Luat = new FoodList();
             List<QLFood> obj = Luat.GetFood(id);
             return View(obj.FirstOrDefault());
         }
+      
     }
 }

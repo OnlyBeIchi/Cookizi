@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Cookizi.Models.QLFood>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<center>
+    <h2>Search</h2>
+
+    <p>
+        @using (Html.BeginForm("Index", "Search", FormMethod.Get))
+        {
+            <input type="text" name="search" />
+            <input type="submit" value="Search" name="submit" />
+        }
+    </p>
+
+    <h3>
+        <img src="~/Theme/img/homnayangi-1200x676.jpg" />
+    </h3>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenFood)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NguyenLieu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Congthucnauan)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenFood)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NguyenLieu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Congthucnauan)
+        </td>
+
+    </tr>
+        }
+
+    </table>
+</center>

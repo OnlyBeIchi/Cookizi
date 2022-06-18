@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Cookizi.Models.QLFood>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<h3>
+    <img src="~/Theme/img/healthy1.jpg" />
+</h3>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenFood)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NguyenLieu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Congthucnauan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenFood)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NguyenLieu)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Congthucnauan)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>
+}
+
+</table>
