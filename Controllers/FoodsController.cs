@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Cookizi.Helper;
 using Cookizi.Models;
 
 namespace Cookizi.Controllers
 {
     public class FoodsController : Controller
     {
+        [AuthorizationFilter]
         // GET: Foods
         public ActionResult Index()
         {
