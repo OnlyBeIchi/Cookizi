@@ -30,7 +30,8 @@ namespace Cookizi.Controllers
                 {
                     TenFood = Convert.ToString(dr["TenFood"]),
                     NguyenLieu = Convert.ToString(dr["NguyenLieu"]),
-                    
+                    Congthucnauan = Convert.ToString(dr["Congthucnauan"]),
+
                 });
             }
             sqlcon.Close();
