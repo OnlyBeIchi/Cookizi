@@ -4,10 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/fonts/fontawesome-free-5.15.4-web/css/all.min.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @*<link href="~/Content/style.css" rel="stylesheet" />*@
 </head>
 <body>
+    
+    
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -18,12 +22,30 @@
                 </button>
                 @Html.ActionLink("Cookizi", "Index", "Search", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Quản Lý Thức Ăn", "Index", "Foods")</li>
+
+
+
+                </ul>
+                <div class="log">
                     <li class="login">@Html.ActionLink("Đăng nhập", "Login", "Home")</li>
                     <li class="logout">@Html.ActionLink("Đăng xuất", "Logout", "Home")</li>
-                </ul>
+                </div>
+                <div class="icon-header">
+                    <a href="https://www.facebook.com/Cookizi-110772261673986/" class="icon-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/cookiziii/" class="icon-link">
+
+                        <i class="fab fa-instagram-square"></i>
+                    </a>
+                </div>
+
+
             </div>
         </div>
     </div>
@@ -46,23 +68,30 @@
         border-color: #90c95a;
     }
 
-        .navbar-inverse:hover {
-            opacity: 1;
-        }
+    .navbar-inverse:hover {
+        opacity: 1;
+     }
 
         .navbar-inverse .navbar-brand {
             color: #ffffff;
         }
 
-            .navbar-inverse .navbar-brand:hover {
-                opacity: 0.8;
-            }
+    .navbar-inverse .navbar-brand:hover {
+           opacity: 0.8;
+    }
 
-        .navbar-inverse .navbar-nav > li > a {
-            color: #ffffff;
-        }
+    .navbar-inverse .navbar-nav > li > a {
+          color: #ffffff;
+    }
 
             .navbar-inverse .navbar-nav > li > a:hover {
                 opacity: 0.8;
             }
+     a{
+         color:#ffffff;
+
+     }
+     a:hover{
+          opacity:0.8;
+     }
 </style>

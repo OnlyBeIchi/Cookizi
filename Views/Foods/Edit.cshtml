@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2 class="index-edit">Chỉnh sửa lại công thức</h2>
 
 
 @using (Html.BeginForm())
@@ -13,7 +13,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>QLFood</h4>
+        <h4  class="index-edit">QLFood</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
@@ -42,7 +42,7 @@
     </div>
 }
 
-<div>
+<div class="back-edit">
     @Html.ActionLink("Back to List", "Index")
 </div>
 

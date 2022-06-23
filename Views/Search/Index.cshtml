@@ -10,8 +10,13 @@
     <p>
         @using (Html.BeginForm("Index", "Search", FormMethod.Get))
         {
-            <input type="text" name="search" />
-            <input type="submit" value="Search" name="submit" />
+        <div class="search">
+            <input type="text" class="search-input" name="search" placeholder="Nhập vào tìm kiếm" />
+            <button class="header__search-btn">
+                <i class="header__search-btn-icon fas fa-search"></i>
+            </button>
+        </div>
+            
         }
     </p>
 
