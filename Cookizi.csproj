@@ -1880,6 +1880,11 @@
     <Content Include="fonts\fontawesome-free-5.15.4-web\webfonts\fa-regular-400.svg" />
     <Content Include="fonts\fontawesome-free-5.15.4-web\webfonts\fa-solid-900.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\img\282730010_5540100242688330_7820154215364852892_n.png" />
+    <Content Include="fonts\img\bck6f.jpg" />
+    <Content Include="fonts\img\cookiii.jpg" />
+    <Content Include="fonts\img\new.jpg" />
+    <Content Include="fonts\img\new1.jpg" />
     <Content Include="fonts\img\pexels-daria-shevtsova-1095550.jpg" />
     <Content Include="fonts\img\pexels-elina-fairytale-3893682.jpg" />
     <Content Include="fonts\img\pexels-ella-olsson-1640777.jpg" />

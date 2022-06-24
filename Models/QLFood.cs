@@ -17,6 +17,16 @@ namespace Cookizi.Models
         [Required(ErrorMessage = "Bạn cần nhập vào nguyên liệu")]
         [Display(Name = "Nguyên Liệu")]
         public string NguyenLieu { set; get; }
+        [Display(Name = "Calories")]
+        public int Calories { set; get; }
+        [Display(Name = "Công thức nấu ăn")]
+
+        public string Congthucnauan { set; get; }
+
+        [Required(ErrorMessage = "Bạn cần nhập vào nguồn hình ảnh")]
+        [Display(Name = "Hình ảnh")]
+        public string Hinhanh { set; get; }
+
     }
 
     class FoodList
@@ -57,7 +67,9 @@ namespace Cookizi.Models
                 strFood.ID = Convert.ToInt32(dt.Rows[i]["Id"].ToString());
                 strFood.TenFood = dt.Rows[i]["TenFood"].ToString();
                 strFood.NguyenLieu = dt.Rows[i]["NguyenLieu"].ToString();
-                
+                strFood.Calories = Convert.ToInt32(dt.Rows[i]["Calories"].ToString());
+                strFood.Congthucnauan = dt.Rows[i]["Congthucnauan"].ToString();
+                strFood.Hinhanh = dt.Rows[i]["Hinhanh"].ToString();
 
                 strList.Add(strFood);
             }
@@ -67,7 +79,7 @@ namespace Cookizi.Models
         // Thêm dữ liệu
         public void AddFood(QLFood strFood)
         {
-            string sql = "INSERT INTO Food(TenFood, NguyenLieu)VALUES(N'" +strFood.TenFood+ "', N'" + strFood.NguyenLieu + "')";
+            string sql = "INSERT INTO Food(TenFood, NguyenLieu, Calories, Congthucnauan, Hinhanh)VALUES(N'" + strFood.TenFood + "', N'" + strFood.NguyenLieu + "', N'" + strFood.Calories + "', N'" + strFood.Congthucnauan + "', N'" + strFood.Hinhanh + "')";
             SqlConnection con = db.GetConnection();
             SqlCommand cmd = new SqlCommand(sql, con);
 
@@ -82,7 +94,7 @@ namespace Cookizi.Models
         // Sửa dữ liệu
         public void EditFood(QLFood strFood)
         {
-            string sql = "UPDATE Food SET TenFood = N'" + strFood.TenFood + "',NguyenLieu =  N'" + strFood.NguyenLieu + "' WHERE Id =" + strFood.ID;
+            string sql = "UPDATE Food SET TenFood = N'" + strFood.TenFood + "',NguyenLieu =  N'" + strFood.NguyenLieu + "', Calories =  N'" + strFood.Calories + "', Congthucnauan =  N'" + strFood.Congthucnauan + "', Hinhanh =  N'" + strFood.Hinhanh + "' WHERE Id =" + strFood.ID;
             SqlConnection con = db.GetConnection();
             SqlCommand cmd = new SqlCommand(sql, con);
 

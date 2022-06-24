@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Search";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 5);
 }
 <center>
     <h2>Search</h2>
@@ -10,40 +11,33 @@
     <p>
         @using (Html.BeginForm("Index", "Search", FormMethod.Get))
         {
-        <div class="search">
-            <input type="text" class="search-input" name="search" placeholder="Nhập vào tìm kiếm" />
-            <button class="header__search-btn">
-                <i class="header__search-btn-icon fas fa-search"></i>
-            </button>
-        </div>
-            
+            <div class="search">
+                <input type="text" class="search-input" name="search" placeholder="Nhập vào tìm kiếm" />
+                <button class="header__search-btn">
+                    <i class="header__search-btn-icon fas fa-search"></i>
+                </button>
+            </div>
+
         }
     </p>
 
 
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TenFood)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NguyenLieu)
-            </th>
-            <th></th>
-        </tr>
+    <hr />
+    @grid.GetHtml(
+tableStyle: "table",
+mode: WebGridPagerModes.All,
+firstText: "<< First",
+previousText: "< Previous",
+nextText: "Next >",
+lastText: "Last >>",
+columns: new[]
+{
+    grid.Column("TenFood","Food"),
+    grid.Column("NguyenLieu", "Ingredient"),
+    grid.Column("Hinhanh", "Hình ảnh",
+                format:@<text><img scr="@Url.Content(item.Hinhanh)" alt="@item.TenFood" height="100" width="100" /></text>),
+    grid.Column("Calories","Calories"),
+    grid.Column("Congthucnauan", "Công thức nấu ăn")
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TenFood)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NguyenLieu)
-                </td>
-                
-            </tr>
-        }
-
-    </table>
+})
 </center>

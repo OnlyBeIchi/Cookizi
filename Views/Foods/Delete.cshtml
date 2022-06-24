@@ -8,7 +8,7 @@
 <h2 >Xóa món ăn</h2>
 
 <h3 >Bạn có chắc chắn muốn xóa món ăn này?</h3>
-<div >
+<div>
     <h4>QLFood</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -28,9 +28,34 @@
             @Html.DisplayFor(model => model.NguyenLieu)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Calories)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calories)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Congthucnauan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Congthucnauan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinhanh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hinhanh)
+        </dd>
+
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color back-edit">

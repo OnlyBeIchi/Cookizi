@@ -1087,7 +1087,8 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333333;
-    background-image: url('../fonts/img/pexels-daria-shevtsova-1095550.jpg');
+    background: url('../fonts/img/bck6f.jpg') top right no-repeat;
+    background-attachment: fixed;
 }
 input,
 button,
@@ -6938,4 +6939,9 @@ p > a {
 .back-edit > a {
     color: #777777 !important;
 }
-
+.table > a{
+    color: #777777 !important;
+}
+tr > th > a {
+    color: #777777 !important;
+}

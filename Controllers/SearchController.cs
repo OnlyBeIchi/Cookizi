@@ -17,7 +17,7 @@ namespace Cookizi.Controllers
         {
             string con = ConfigurationManager.ConnectionStrings["FoodDBConnectionString"].ConnectionString;
             SqlConnection sqlcon = new SqlConnection(con);
-            string sql = "SELECT * FROM [dbo].[Food] WHERE TenFood like N'%" + search + "%' OR NguyenLieu like N'%" + search + "%' ";
+            string sql = "SELECT * FROM [dbo].[Food] WHERE TenFood like N'%" + search + "%' OR NguyenLieu like N'%" + search + "%'  OR Calories like N'%" + search + "%'  OR Congthucnauan like N'%" + search + "%' ";
             SqlCommand cmd = new SqlCommand(sql, sqlcon);
             sqlcon.Open();
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -30,12 +30,23 @@ namespace Cookizi.Controllers
                 {
                     TenFood = Convert.ToString(dr["TenFood"]),
                     NguyenLieu = Convert.ToString(dr["NguyenLieu"]),
-                    
+                    Calories = Convert.ToInt32(dr["Calories"]),
+                    Congthucnauan = Convert.ToString(dr["Congthucnauan"]),
+                    Hinhanh = Convert.ToString(dr["Hinhanh"]),
+
                 });
             }
             sqlcon.Close();
             ModelState.Clear();
             return View(strList);
+        }
+
+
+        public ActionResult Details(string id = "")
+        {
+            FoodList Luat = new FoodList();
+            List<QLFood> obj = Luat.GetFood(id);
+            return View(obj.FirstOrDefault());
         }
     }
 }
